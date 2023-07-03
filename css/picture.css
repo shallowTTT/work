@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.container {
+    top: 40px;
+    /* left: 10vw; */
+    margin: auto;
+    position: relative;
+    width: 60vw;
+    height: 30vw;
+    /* border: 2px solid black; */
+    overflow: hidden;
+
+}
+
+.image {
+    display: flex;
+    width: 400%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.slide {
+    width: inherit;
+    height: 100%;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+}
+
+.prev,
+.next {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    display: none;
+    transition: 0.5s;
+}
+
+.prev:hover,
+.next:hover {
+    transform: scale(1.5) translateY(-50%);
+    color: aqua;
+}
+
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+body {
+    background-color: rgb(171, 235, 235);
+    overflow-x: hidden;
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.dot.active {
+    background-color: red;
+}
+
+
+.shell {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    /* 裁剪x轴滚动条 */
+    overflow-x: hidden;
+    /* 透视效果 */
+    perspective: 3px;
+    transform: translateY(10vh);
+
+}
+
+.shell div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+
+.wallpaper {
+    height: 100%;
+    transform: translateZ(-1px) scale(1.6);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.txt {
+    height: 50vh;
+    background-color:rgb(171, 235, 235);
+}
+
+@media (max-width : 1200px) {
+    .container {
+        width: 100vw;
+        height: 50vw;
+    }
+
+    .shell .wallpaper {
+        width: 100vw;
+        height: 50vw;
+    }
+
+    .shell .txt {
+        width: 100%;
+        height: 20vw;
+        font-size: 1rem;
+    }
+}

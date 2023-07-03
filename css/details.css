@@ -1,0 +1,266 @@
+nav {
+    width: 100%;
+    height: 4rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* position: fixed; */
+    
+}
+nav {
+    position: fixed;
+    z-index: 2;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 20px;
+}
+
+nav a {
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+}
+
+nav li:hover {
+    transition: 0.3s;
+    scale: 1.15;
+}
+
+nav li:active {
+    scale: .95;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* 需隐藏最外层不可见区域以使视差生效 */
+    overflow: hidden;
+}
+
+body {
+    /* 开启3d空间，数值越小3D效果越大 */
+    perspective: 1px;
+    /* 在3D空间进行transform */
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* 需要设置高度以使时差生效 */
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: inherit;
+    /* perspective: 1px; */
+    /* 需要设置高度以使时差生效 */
+    height: 100vh;
+}
+
+header::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/face1.jpg);
+    background-size: cover;
+    background-position: center;
+    /* 核心，按z轴向远处移动1px，大小会缩小一倍，使用scale放大到原图大小 */
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+}
+
+main {
+    position: relative;
+    background-color: #2c9ecb;
+}
+
+.bigContainer {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    margin: auto;
+    /* text-align: center; */
+    border: 1px solid rgb(0, 0, 0);
+    margin-top: 100px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+}
+
+.bigContainer .title {
+    font-size: 2rem;
+}
+
+.bigContainer {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.bigContainer .container-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.bigContainer .container-box .poster {
+    flex: 1;
+    padding: 20px;
+}
+
+.bigContainer .container-box .description {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    text-align: center;
+    /* justify-content: start; */
+    /* width: 40vw; */
+    padding: 20px;
+}
+
+.bigContainer .container-box .description p {
+    font-size: 1rem;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+.poster img {
+    width: 390px;
+}
+
+.profiles {
+    border: 1px solid rgb(0, 0, 0);
+    margin: 20px;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 30px 20px rgba(37, 35, 35, 0.2);
+}
+
+.profiles:hover {
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+
+@media (max-width:900px) {
+    header {
+        height: 60vh;
+    }
+    .bigContainer {
+        width: 100vw;
+    }
+
+    .bigContainer .container-box {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* align-items: center; */
+    }
+
+    .bigContainer .container-box .description {
+        width: 100%;
+    }
+
+    .poster img {
+        width: 90vw;
+    }
+    .container_group{
+        flex-wrap: wrap;
+    }
+
+}
+
+
+.container_group{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 90vw;
+    margin: auto;
+    /* text-align: center; */
+    /* border: 1px solid rgb(0, 0, 0); */
+    margin-top: 100px;
+    /* background-color: rgb(77, 83, 195); */
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+    justify-content: space-around;
+    background-image: url("../images/all.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    
+}
+.group_card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 390px;
+    height: 300px;
+    /* overflow: hidden; */
+    padding: 40px;
+    position: relative;
+    /* background-color: #e09999; */
+    transition: 0.3s ease-in-out;
+    margin-bottom: 80px;
+    
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+
+}
+.group_card:hover{
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.group_card .group_logo{
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: -60px;
+}
+.group_card .group_logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 15px;
+}
+.group_card .group_content{
+    position: relative;
+    margin-top: -140px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.group_card:hover .group_content{
+    color: #ffffff;
+    margin-top: 220px;
+    opacity: 1;
+    visibility: visible;
+}
