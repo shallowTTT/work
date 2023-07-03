@@ -2,7 +2,7 @@
 ## 1. JavaScript简介
 JavaScript是前端三剑客之一，广泛应用于网页前端开发和后端开发的编程语言,能与html，css搭配让页面有更好的表现。
 ## 2. 基础语法
-JavaScript的语法跟Java语言相似。
+JavaScript的语法跟Java语言相似。  
 **标识符：** 采用驼峰命名规则，且区分到小写。
 
 **变量:** 使用`var`关键字声明变量，变量将成为的作用域中的局部变量。 比如`var name = Tom;`.
@@ -91,7 +91,7 @@ Javascript数组是一组按顺序排列的对象，它可以包含任何类型�
 - new方法创建
   `var arr = new Array(1, 2, 3);`
 - 字面量
-  `var arr = [1, 2, 3]`
+  `var arr = [1, 2, 3]`  
 **常用方法**
 - `arr.push(elem)`:在数组的末尾添加一个元素。
 - `arr.pop()`:从数组的末尾移除一个元素。
